@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.github.jeluard</groupId>
+				<artifactId>maven-plantuml-plugin</artifactId>
+				<version>7940</version>
+				<configuration>
+					<outputDirectory>${basedir}/target/site/uml</outputDirectory>
+					<sourceFiles>
+						<directory>${basedir}</directory>
+						<includes>
+							<include>src/site/uml/**/*.puml</include>
+						</includes>
+					</sourceFiles>
+				</configuration>
+				<executions>
+					<execution>
+						<id>plantuml</id>
+						<phase>pre-site</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>
