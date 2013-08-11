@@ -83,7 +83,6 @@ public class PlantUmlPlugin implements Plugin {
 		}
 
 		createPlantUmlExampleFiles("example_flow_1.puml");
-		createPlantUmlExampleFiles("example_flow_2.puml");
 	}
 
 	private void createPlantUmlExampleFiles(String filename) {
