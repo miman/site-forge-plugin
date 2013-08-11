@@ -8,7 +8,7 @@
 	<version>1.0.0-SNAPSHOT</version>
 	<name>${artifactId}</name>
 	<properties>
-		<miman.forge.plugin.util.version>1.0.1</miman.forge.plugin.util.version>
+		<miman.forge.plugin.util.version>1.1.1</miman.forge.plugin.util.version>
 		<maven.release.plugin.version>2.4.1</maven.release.plugin.version>
 		<forge.api.version>1.2.3.Final</forge.api.version>
 	</properties>
@@ -74,7 +74,7 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>se.miman.forge.plugin.util</groupId>
+			<groupId>eu.miman.forge.plugin.util</groupId>
 			<artifactId>miman-forge-plugin-util</artifactId>
 			<version>${miman.forge.plugin.util.version}</version>
 		</dependency>

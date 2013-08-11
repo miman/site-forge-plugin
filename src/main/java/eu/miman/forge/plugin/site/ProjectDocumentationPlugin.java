@@ -29,13 +29,13 @@ import org.jboss.forge.shell.plugins.Plugin;
 import org.jboss.forge.shell.plugins.RequiresProject;
 import org.jboss.forge.shell.plugins.SetupCommand;
 
-import se.miman.forge.plugin.util.VelocityUtil;
-import se.miman.forge.plugin.util.helpers.DomFileHelper;
-import se.miman.forge.plugin.util.helpers.DomFileHelperImpl;
 import eu.miman.forge.plugin.site.completer.SiteDocFormatCompleter;
 import eu.miman.forge.plugin.site.completer.SiteDocFormatType;
 import eu.miman.forge.plugin.site.facet.SiteFacet;
 import eu.miman.forge.plugin.site.facet.UmlGraphFacet;
+import eu.miman.forge.plugin.util.VelocityUtil;
+import eu.miman.forge.plugin.util.helpers.DomFileHelper;
+import eu.miman.forge.plugin.util.helpers.DomFileHelperImpl;
 
 @Alias("documentation")
 @Help("A plugin that adds site documentation support to a project")

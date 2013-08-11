@@ -22,8 +22,8 @@ import org.jboss.forge.shell.plugins.Plugin;
 import org.jboss.forge.shell.plugins.RequiresProject;
 import org.jboss.forge.shell.plugins.SetupCommand;
 
-import se.miman.forge.plugin.util.VelocityUtil;
 import eu.miman.forge.plugin.site.facet.PlantUmlFacet;
+import eu.miman.forge.plugin.util.VelocityUtil;
 
 @Alias("plantuml")
 @Help("A plugin that adds PlantUML image generation support to a project")

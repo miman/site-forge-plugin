@@ -10,7 +10,7 @@ import org.jboss.forge.project.facets.DependencyFacet;
 import org.jboss.forge.shell.plugins.Alias;
 import org.jboss.forge.shell.plugins.RequiresFacet;
 
-import se.miman.forge.plugin.util.MimanBaseFacet;
+import eu.miman.forge.plugin.util.MimanBaseFacet;
 
 @Alias("plantuml-facet")
 @RequiresFacet({ MavenCoreFacet.class, DependencyFacet.class, SiteFacet.class})

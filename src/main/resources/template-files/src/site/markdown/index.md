@@ -10,7 +10,7 @@
 
 ## Functionality exposed from this module
  
- All exposed services for this module are called using Active MQ.
+ This module exposes its services over an Active MQ interface using XML formatted messages.
 
  The handlers for the exposed services can be found in the <<[com.yourorg.yourmodule.handlers](./apidocs/com/yourorg/yourmodule/integrations/package-summary.html "com.yourorg.yourmodule.handlers")>> package.
 
