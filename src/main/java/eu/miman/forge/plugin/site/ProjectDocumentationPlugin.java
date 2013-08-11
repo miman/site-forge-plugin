@@ -46,6 +46,8 @@ public class ProjectDocumentationPlugin implements Plugin {
 
 	@Inject
 	private Project project;
+	
+	SiteFacet siteFacet;
 
 	DomFileHelper domFileHelper;
 	private final VelocityEngine velocityEngine;
@@ -85,7 +87,8 @@ public class ProjectDocumentationPlugin implements Plugin {
 		SiteFacet.prjName = prjName;
 		SiteFacet.docFormat = SiteDocFormatType.from(format);
 		if (!project.hasFacet(SiteFacet.class))
-			event.fire(new InstallFacets(SiteFacet.class));
+//			event.fire(new InstallFacets(SiteFacet.class));
+			project.installFacet(new SiteFacet());
 		else
 			ShellMessages.info(out,
 					"Project is already a Site enabled project.");
@@ -111,6 +114,14 @@ public class ProjectDocumentationPlugin implements Plugin {
 	//===================================================
 	// Helper functions
 	/**
+	 * Copies the template document file from the correct template (based on the given codFormat) to the site folder.
+	 * 
+	 * We also add a link to this document in the site menu
+	 * 
+	 * @param filename	The name of the file to copy 
+	 * @param linkName	The link name to be added to the site.xml file referring to this file
+	 * @param velocityPlaceholderMap	Velocity map containing items to replace
+	 * @param docFormat	The document format we want to use.
 	 */
 	private void createSiteDocFile(String filename, String linkName,
 			Map<String, Object> velocityPlaceholderMap, SiteDocFormatType docFormat) {
@@ -150,7 +161,7 @@ public class ProjectDocumentationPlugin implements Plugin {
 		nodeToAdd.setAttribute("href", href);
 		
 		// Add to the application context
-		String applicationContextPath = pom.getProjectDirectory().getAbsolutePath() + "/site/site.xml";
+		String applicationContextPath = pom.getProjectDirectory().getAbsolutePath() + "/src/site/site.xml";
 		try {
 			Xpp3Dom appContextDom = domFileHelper
 					.readXmlFile(applicationContextPath);
