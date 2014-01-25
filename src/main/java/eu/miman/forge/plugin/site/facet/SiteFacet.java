@@ -99,7 +99,12 @@ public class SiteFacet extends MimanBaseFacet {
 		final MavenCoreFacet mvnFacet = project.getFacet(MavenCoreFacet.class);
 		Model pom = mvnFacet.getPOM();
 
+		String packaging = pom.getPackaging();
+
 		mergePomFileWithTemplate(pom);
+		
+		pom.setPackaging(packaging); 
+		
 		mvnFacet.setPOM(pom);
 
 		Map<String, Object> velocityPlaceholderMap = new HashMap<String, Object>();

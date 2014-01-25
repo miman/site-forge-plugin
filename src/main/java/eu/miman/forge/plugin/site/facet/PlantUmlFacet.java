@@ -51,7 +51,7 @@ public class PlantUmlFacet extends MimanBaseFacet {
 		boolean dependenciesOk = false;
 		for (Plugin plugin : deps) {
 			if (plugin.getGroupId().equals("com.github.jeluard") 
-					&& plugin.getArtifactId().equals("maven-plantuml-plugin")) {
+					&& plugin.getArtifactId().equals("plantuml-maven-plugin")) {
 				dependenciesOk = true;
 			}
 		}
@@ -67,7 +67,12 @@ public class PlantUmlFacet extends MimanBaseFacet {
 		final MavenCoreFacet mvnFacet = project.getFacet(MavenCoreFacet.class);
 		Model pom = mvnFacet.getPOM();
 
+		String packaging = pom.getPackaging();
+
 		mergePomFileWithTemplate(pom);
+		
+		pom.setPackaging(packaging); 
+		
 		mvnFacet.setPOM(pom);
 		
 		createNeededDirs(pom.getProjectDirectory().getAbsolutePath());
